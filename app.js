@@ -6,6 +6,7 @@ const button = document.getElementById("search-btn");
 const openModal = document.getElementById("open-modal");
 const modalContainer = document.getElementById("modal-container");
 const closeModal = document.getElementById("close-modal");
+const scrollBtn = document.getElementById("scroll-btn");
 
 async function fatchRecipes() {
   try {
@@ -35,8 +36,10 @@ async function fatchRecipes() {
     });
 
     document.querySelectorAll(".view-details-btn").forEach(function (element) {
-      element.addEventListener("click", function (e) {
-        e.preventDefault();
+      element.addEventListener("click", function () {
+        openModal.classList.remove("hidden");
+        openModal.classList.add("flex");
+        document.querySelector("body").style.overflow = "hidden";
         let foodId = this.dataset.id;
         async function showModal() {
           loader.style.display = "flex";
@@ -65,12 +68,10 @@ async function fatchRecipes() {
               openModal.classList.remove("flex");
               openModal.classList.add("hidden");
               modalContainer.innerHTML = "";
+              document.querySelector("body").style.overflow = "auto";
             });
         }
         showModal();
-
-        openModal.classList.remove("hidden");
-        openModal.classList.add("flex");
       });
     });
   } catch (error) {
@@ -81,9 +82,7 @@ async function fatchRecipes() {
 }
 fatchRecipes();
 
-button.addEventListener("click", (e) => {
-  e.preventDefault();
-
+button.addEventListener("click", () => {
   let foodName = input.value.trim();
   url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`;
 
@@ -91,8 +90,24 @@ button.addEventListener("click", (e) => {
   fatchRecipes();
 });
 
-document.querySelectorAll(".view-details-btn").forEach(function (element) {
-  element.addEventListener("click", function () {
-    alert("Details button clicked!");
+
+
+
+
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.addEventListener("click", function () {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
   });
 });
