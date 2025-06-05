@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Assignment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <!-- header section -->
+    <header>
+        <div class="p-2 w-[25%] sm:w-[20%] mx-auto"><a href="/"><img src="./images/logo.png" alt="brand logo"></a></div>
+    </header>
+    <!-- hero area -->
+    <section class="background">
+        <div class="space-y-1">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl text-white">Search Your Favorite Recipe</h1>
+            <p class="text-xs text-white">A handful of simple ingredients typify thie fresh , vibrant flavors of Greek
+                cooking</p>
+        </div>
+    </section>
+    <!-- filter section -->
+    <section class="my-5">
+        <div
+            class="flex justify-center items-center border border-gray-400 w-2/3 h-6 sm:h-7 md:h-8 mx-auto rounded-sm pl-1">
+            <input class="outline-none w-full" type="text" placeholder="Search..." id="input-src-value">
+            <button id="search-btn" class="bg-[#FF9B45] w-6 h-[100%] p-1" type="button">
+                <img src="./images/search-icon.svg" alt="search">
+            </button>
+        </div>
+    </section>
+    <!-- latest racipes -->
+    <section class="space-y-5 sm:px-10">
+        <h2 class="text-xl sm:text-2xl xl:text-3xl text-center">Latest Recipes</h2>
+        <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div id="loader" class="flex justify-center items-center col-span-full py-10">
+                <div class="rounded-full border-4 border-t-yellow-50 border-gray-300 w-12 h-12 animate-spin"></div>
+            </div>
+        </div>
+    </section>
+    <!-- popup details foods -->
+    <section id="open-modal" class="hidden">
+        <div class="fixed top-0 left-0 h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-all"
+            style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="flex flex-col sm:w-[400px] lg:w-[600px] max-w-full bg-white rounded-md relative">
+                <div id="modal-container">
+                    <!-- <div>
+                        <img class="w-full h-[250px]" src="./images/card1.jpg" alt="">
+                    </div>
+                    <p class="p-2 h-[100px] overflow-y-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Quidem corrupti
+                        reprehenderit totam eum eaque necessitatibus ea, quo aut commodi a nulla modi architecto at quam
+                        eveniet officiis maiores nostrum veritatis!</p>
+                    <div class="flex justify-center items-center"><button id="close-modal-js"
+                            class="bg-[#D5451B] my-2  px-5 py-2 rounded-md text-white">Close</button>
+                    </div> -->
+                    <div id="loader" role="status"
+                        class="max-w-full p-4 border border-gray-200 rounded-sm shadow-sm animate-pulse md:p-6 dark:border-gray-700">
+                        <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded-sm dark:bg-gray-700">
+                            <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 16 20" aria-hidden="true">
+                                <path
+                                    d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+                                <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+                            </svg>
+                        </div>
+                        <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                        <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
