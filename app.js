@@ -40,6 +40,7 @@ async function fatchRecipes() {
         openModal.classList.remove("hidden");
         openModal.classList.add("flex");
         document.querySelector("body").style.overflow = "hidden";
+
         let foodId = this.dataset.id;
         async function showModal() {
           loader.style.display = "flex";
@@ -52,12 +53,14 @@ async function fatchRecipes() {
 
           modalContainer.innerHTML = "";
           modalContainer.innerHTML = `
-            <div>
-              <img class="rounded-t-md w-full h-[250px]" src="${data.meals[0].strMealThumb}" alt="${data.meals[0].strMeal}">
+            <div class=" m-4 shadow-2xl rounded-2xl">
+              <div>
+                <img class="rounded-t-md w-full xl:h-[300px] h-[250px]" src="${data.meals[0].strMealThumb}" alt="${data.meals[0].strMeal}">
+              </div>
+              <p class="px-2 py-4  h-[150px] overflow-y-auto">${data.meals[0].strInstructions}</p>
             </div>
-            <p class="p-2  h-[100px] overflow-y-auto">${data.meals[0].strInstructions}</p>
-            <div class="flex justify-center items-center">
-                <button id="close-modal-js" class="bg-[#D5451B] my-2  px-5 py-2 rounded-md text-white">Close</button>
+            <div class="flex justify-end items-center mr-5">
+                <button id="close-modal-js" class="bg-[#D5451B] mb-4  px-5 py-2 rounded-md text-white">Close</button>
             </div>
             `;
 
@@ -89,10 +92,6 @@ button.addEventListener("click", () => {
   input.value = "";
   fatchRecipes();
 });
-
-
-
-
 
 window.onscroll = function () {
   if (

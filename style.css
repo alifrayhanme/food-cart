@@ -1,16 +1,10 @@
-.background{
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url(./images/page-title.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.background {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(./images/page-title.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-
-
-
-
-
-

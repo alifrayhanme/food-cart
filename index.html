@@ -35,7 +35,7 @@
         </div>
     </section>
     <!-- latest racipes -->
-    <section class="space-y-5 sm:px-10">
+    <section class="space-y-5 sm:px-16 px-4">
         <h2 class="text-xl sm:text-2xl xl:text-3xl text-center">Latest Recipes</h2>
         <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <div id="loader" class="flex justify-center items-center col-span-full py-10">
@@ -45,17 +45,19 @@
     </section>
     <!-- popup details foods -->
     <section id="open-modal" class="hidden">
-        <div class="fixed top-0 left-0 h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-all"
+        <div class="fixed z-50 top-0 left-0 h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-all"
             style="background-color: rgba(0, 0, 0, 0.5);">
-            <div class="flex flex-col sm:w-[400px] lg:w-[600px] max-w-full bg-white rounded-md relative">
+            <div class="flex flex-col sm:w-[400px] lg:w-[600px] max-w-full bg-white rounded-2xl relative mx-5">
                 <div id="modal-container">
-                    <!-- <div>
+                    <!-- <div class="p-5 shadow-2xl">
+                        <div>
                         <img class="w-full h-[250px]" src="./images/card1.jpg" alt="">
                     </div>
                     <p class="p-2 h-[100px] overflow-y-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Quidem corrupti
                         reprehenderit totam eum eaque necessitatibus ea, quo aut commodi a nulla modi architecto at quam
                         eveniet officiis maiores nostrum veritatis!</p>
+                    </div>
                     <div class="flex justify-center items-center"><button id="close-modal-js"
                             class="bg-[#D5451B] my-2  px-5 py-2 rounded-md text-white">Close</button>
                     </div> -->
@@ -81,11 +83,23 @@
         </div>
     </section>
     <!-- scroll to top -->
-     <section id="scroll-btn" class="fixed right-5 bottom-5">
+    <section id="scroll-btn" class="fixed z-10 right-5 bottom-5">
         <div class="bg-[#FF9B45] h-8 w-8 hover:bg-[#ffb472] rounded-md">
             <img class="" src="./images/arrowhead-up.png" alt="top">
         </div>
-     </section>
+    </section>
+    <!-- footer area -->
+    <footer class="bg-gray-600 mt-5 h-10 flex justify-evenly items-center">
+        <p class="text-white">&copy; All right reserve <a class="text-[#FF9B45]" href="/">Thatix</a></p>
+        <div class="flex justify-center items-center gap-2">
+            <a href="#">
+                <img class="w-6 h-6" src="./images/facebook.png" alt="facebook">
+            </a>
+            <a href="#">
+                <img class="w-6 h-6" src="./images/instagram.png" alt="instagram">
+            </a>
+        </div>
+    </footer>
 </body>
 
 </html>
